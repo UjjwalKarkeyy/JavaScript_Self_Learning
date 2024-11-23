@@ -104,7 +104,7 @@ console.log(str.toLowerCase()); // convert to lowercase
 console.log("Trimmed value is:" + str.trim()); // removes space from the string
 console.log(str.split("")); // split the string into array
 
-// Template literals in JS (Meaning of literals: Literals are constant values assigned to constant variables. Template is basically a blueprint that enables dynamic use of something which here is in the form of '&{}'. Since it can become the literal part of a string i.e., string is a literal as if I write 'My name is: ' then this is not going to change. So, as template provided a template XD, to be used in a string literal it is called template literal.)
+// Template literals in JS (Meaning of literals: Literals are constant values assigned to constant variables. Template is basically a blueprint that enables dynamic use of something which here is in the form of '${}'. Since it can become the literal part of a string i.e., string is a literal as if I write 'My name is: ' then this is not going to change. So, as template provided a template XD, to be used in a string literal it is called template literal.)
 /* A way to have embedded expressions in strings 
     why do we need them: see the example below:
 */
@@ -141,3 +141,59 @@ console.log(`${obj.name.charAt(0)}`);
 
 /*----------------------------------Lecture 3 Done--------------------------------- */
 
+// Lecture 4: Arrays in JavaScript
+
+// We can add various data types in the array of JS
+
+let random_array = [1,2,'ujjwal',4.5,true]
+
+console.log(random_array);
+console.log(random_array.length);
+
+// Array is of type object. Instead of key value pair like that of object, we have index that acts as the key
+console.log(typeof random_array);
+
+// Arrays are mutable
+random_array.push(10);
+console.log(random_array);
+
+/* Looping over an array */
+
+// Try doing this using in, it will instead print the index of the random_array. This goes to show the difference between 'in' and 'of' in for loop.
+for(let i of random_array)
+{
+    console.log(i);
+}
+
+/* ARRAY METHODS
+    push(): add to end
+    pop(): delete from end and return
+    toString(): converts array to string. No change in ori array. Returns a new string.
+    concat(): joins multiple arrays and returns result
+    unshift(): add to start
+    shift(): delete from start and return
+    slice(): returns a piece of the array. No change in ori array
+    Splice(): change original array (add, remove, replace) -> (stardingIndx, number of ele to delete, newEletoAdd)
+*/
+
+new_rand_array = ['thor','spiderman','ironman']
+
+let heroes = new_rand_array.concat(random_array)
+console.log(heroes);
+
+heroes.unshift('antman')
+console.log(heroes);
+
+let deleted_hero = heroes.shift()
+console.log(deleted_hero);
+
+console.log(heroes.slice(1,3));
+
+heroes.splice(2,1,'MotuPatlu') // No delete elements passed then it will delete every ele from starting index
+
+console.log(heroes);
+
+let test
+console.log(typeof test);
+
+/*----------------------------------Lecture 4 Done--------------------------------- */
