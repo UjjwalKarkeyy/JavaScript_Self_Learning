@@ -197,3 +197,141 @@ let test
 console.log(typeof test);
 
 /*----------------------------------Lecture 4 Done--------------------------------- */
+
+// LECTURE 5: Functions and Methods
+
+function firstfunction(msg)
+{
+    console.log(msg);
+}
+
+// let msgs = prompt("Enter your msg: ")
+// firstfunction(msgs)
+
+// Arrow functions: Compact way of writing a function
+/*
+Syntax of writing an arrow function:
+
+const functionName = (param1, param2, ...) => {
+        [do some work]
+    };
+*/
+
+let arrow_message = (msg) =>
+{
+    console.log(msg);
+};
+
+// console.log(arrow_message);  //This will give the definition of the function. To make the function do the work, we will have to call the function name and also pass the arguments.
+
+arrow_message("Hello")
+
+// We can also store any value into the variable of an arrow function as it is simply a variale. For example let's take the above array function's variable:
+
+arrow_message = 'Changed'
+console.log(arrow_message);
+
+// forEach loop in arrays
+
+/*
+Syntax for 'forEach':
+
+    arr.forEach(callBackFunction)
+
+    -> A callBackFunction is a function that is passed as an argument to another function.
+ */
+
+// We can either make the call back func an arrow function which is considered to be the trend or a simple function as well
+heroes.forEach((val)=>{  
+  console.log(val);
+})
+
+/*By default, call back function takes three parameters
+    1. Value
+    2. Index
+    3. Array
+*/
+
+heroes.forEach((val,indx)=>{
+    console.log("Val and indx: "+val,indx);
+})
+
+heroes.forEach((val,indx, arr)=>{
+    console.log("Val, indx, and arr: "+val,indx, arr);
+})
+
+// Higher order functions: They are such functions which takes an argument as a function or returns a function as an answer.
+
+/* SOME MORE ARRAY METHODS:
+    1. Map
+    -> Creates a new array with the results of some operation. The value its callback returns are used to form new array.
+
+    Syntax:
+
+        arr.map(callbackFunc(val,indx,arr))
+
+    This is similar to forEach however this returns a new array.
+
+    2. Filter
+    -> Creates a new array with all elements that pass the test implemented by the provided function.
+
+    3. Reduce
+    -> Performs some operations & reduces the array to a single value. It returns that single value.
+
+    *accumulator: result
+
+*/
+
+let newMapArr = heroes.map((val)=>{
+    return val;
+})
+
+console.log("Mapped array is: "+newMapArr);
+
+let filterArr = heroes.filter((val)=>{
+    return val.length>5;
+})
+
+console.log(`Filter array is: ${filterArr}`);
+
+let numArr = [1,2,3,4]
+
+const res = numArr.reduce((res,current)=>{
+    return res>current ? res: current;
+})
+
+console.log(res);
+
+// Q1: We are given array of marks of students. Filter out the marks of students that score 90+.
+
+let stuMarks = [80,10,95,87,91,65,92,100]
+
+let highScore = stuMarks.filter((val)=>{
+    return val>90;
+})
+
+console.log("Marks that are above 90 are: "+highScore);
+
+let questionInput = prompt("Enter a number: ")
+let questionArr = []
+for(let i = 0; i < questionInput; i++)
+{
+    questionArr[i] = i*2;
+}
+
+console.log(questionArr);
+
+let questionSum = questionArr.reduce((res,current)=>{
+    return res+current;
+})
+
+console.log("Sum is: " + questionSum);
+
+let questionMul = questionArr.reduce((res,current)=>{
+    return res*current;
+})
+
+console.log("Product is: "+questionMul);
+
+/*----------------------------------Lecture 5 Done--------------------------------- */
+
