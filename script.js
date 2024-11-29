@@ -334,4 +334,6 @@ let questionMul = questionArr.reduce((res,current)=>{
 console.log("Product is: "+questionMul);
 
 /*----------------------------------Lecture 5 Done--------------------------------- */
+// LECTURE 6: DOM (Document Object Model)
+// Available in script_for_DOM.js
 
