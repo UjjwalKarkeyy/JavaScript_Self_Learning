@@ -25,7 +25,7 @@ let btn1 = document.querySelector('#btn1');
 //     console.log(e.clientX, e.clientY);
 // };
 
-let div = document.querySelector("div");
+// let div = document.querySelector("div");
 
 // div.onmouseover = () =>{
 //     console.log('Mouse is over the div');
@@ -59,28 +59,56 @@ let div = document.querySelector("div");
 
 // Creating btn1 event again but now using event listener
 
-btn1.addEventListener('click',(e)=>{
-    console.log('btn1 was clicked!');
-    console.log(e.type);
+// btn1.addEventListener('click',(e)=>{
+//     console.log('btn1 was clicked!');
+//     console.log(e.type);
     
-})
+// })
 
-btn1.addEventListener('click',(e)=>{
-    console.log('btn1 was clicked by handler 2!');
-})
+// btn1.addEventListener('click',(e)=>{
+//     console.log('btn1 was clicked by handler 2!');
+// })
 
-const handler3 = () => {
-    console.log('btn1 was clicked by handler 3!');
-}
+// const handler3 = () => {
+//     console.log('btn1 was clicked by handler 3!');
+// }
 
-btn1.addEventListener('click', handler3)
+// btn1.addEventListener('click', handler3)
 
-// Removing an event listener
+// // Removing an event listener
 
-btn1.removeEventListener('click',handler3)
+// btn1.removeEventListener('click',handler3)
 
 /* Question: Create a dark/light mode toggle button */
 
+let bodyMode = document.querySelector('body');
+let text = document.getElementById('welcome');
+let mode = 1;
 
+const light_mode = () =>{
+    mode = 1;
+    bodyMode.style.backgroundColor = 'white';
+    text.style.color = 'black';
+};
 
+const dark_mode = () =>{
+    mode = 0;
+    bodyMode.style.backgroundColor = 'rgb(57, 55, 55)';
+    text.style.color = 'white';
+};
+
+const mode_val_func = () =>
+{
+    if (mode === 0)
+    {
+        light_mode();
+    }
+    
+    else if (mode === 1)
+    {
+        dark_mode();
+    }
+};
+
+btn1.addEventListener('click', mode_val_func);
 
