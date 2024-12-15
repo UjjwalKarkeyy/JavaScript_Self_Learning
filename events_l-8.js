@@ -16,14 +16,14 @@
 
 let btn1 = document.querySelector('#btn1');
 
-btn1.onclick = (e) =>{
+// btn1.onclick = (e) =>{
 
-    console.log('btn1 was clicked!');
-    console.log(e);
-    console.log(e.type);
-    console.log(e.target);
-    console.log(e.clientX, e.clientY);
-};
+//     console.log('btn1 was clicked!');
+//     console.log(e);
+//     console.log(e.type);
+//     console.log(e.target);
+//     console.log(e.clientX, e.clientY);
+// };
 
 let div = document.querySelector("div");
 
@@ -45,5 +45,42 @@ let div = document.querySelector("div");
 
     e.target, e.type, e.clientX, e.clientY, etc.
  */
+
+/* EVENT LISTENER */
+
+/*
+    Such functions which keep listening for event. For one event we can create multiple functions
+    Syntax:
+
+        node.addEventListener(event, callback); // Here, callback can also be called event handler
+
+        node.removeEventListener(event, callback);
+ */
+
+// Creating btn1 event again but now using event listener
+
+btn1.addEventListener('click',(e)=>{
+    console.log('btn1 was clicked!');
+    console.log(e.type);
+    
+})
+
+btn1.addEventListener('click',(e)=>{
+    console.log('btn1 was clicked by handler 2!');
+})
+
+const handler3 = () => {
+    console.log('btn1 was clicked by handler 3!');
+}
+
+btn1.addEventListener('click', handler3)
+
+// Removing an event listener
+
+btn1.removeEventListener('click',handler3)
+
+/* Question: Create a dark/light mode toggle button */
+
+
 
 
